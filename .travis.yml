@@ -13,7 +13,7 @@ addons:
 
 install:
   # Install ansible
-  - pip install ansible molecule
+  - pip install ansible==2.3.0 molecule apache-libcloud
 
   # Check ansible version
   - ansible --version
