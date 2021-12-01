@@ -13,7 +13,7 @@ notifications:
 install:
 - pip install ansible==2.3.0 molecule-gce apache-libcloud
 - ansible --version
-#- printf '[defaults]\nroles_path=../' >ansible.cfg
+- printf '[defaults]\nroles_path=../' >ansible.cfg
 
 env:
   matrix:
