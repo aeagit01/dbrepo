@@ -11,7 +11,7 @@ notifications:
       secure: oyaq/R3uzmB7ZqEbwUQnGqUANcG9CY6cNAVeUheLbR4mXp92tUCuALrBkyzQDDTo4HEddeIt4z0uBRytWhDBESikUaLUYlWYKRgiBdIhHNrpE8yh36oZ/Ze1h/Q9awMvjrN5RD4uYU1snTXhjZx1rrvCDf9/eSbM92qHx1nP6NczGZ3jLihp9c9omZQfKL2p8VfGRsFAX26TB1YQu4cLDyA+vCPJCde0LW0m75Fi4X74UYTVAqqbdE/tTluB+5e3sypUKMRfkqUu+I9vypfyzrBHAIuMfBKc8rkR06jEekoc3TSiMb3gDl682tGLpjszxzoV9Am6ryKh5qIdPk3epLBg5jHbciLUt0N1DlwAK+5nicy8gaXDf9uCkSjKB/chIS65CFaeGd+hW3FRc42Vn6P1OcWN2ZCJYhugmT0XJp2cmaV2Lsr0GMWxLPYQCiORL6Foc/y/MiIZLACcOg4VFrqel+NZEKnKVwuVZNrkraQ8uJeFiKBNf2DtR/eiVrKwaCiTksoDzEznHstY/omr6pZeUZV032A3ZyTHgmyIuqC8Kmf4IscSN5PSxy4KS2nKuSd+4p/B6gQT3KIZBCTukdeMJNDL+UKW/wygGNA0fqeSJG5uWt0LNNSxOgcDnkCk7SOcs7MZrcjgiPJUPGOlR5tV7FFqhry49t+FMhpIsRI=
 
 install:
-- pip install ansible==2.22.0 molecule-gce apache-libcloud
+- pip install ansible==2.23.0 molecule-gce apache-libcloud
 - ansible --version
 #- printf '[defaults]\nroles_path=../' >ansible.cfg
 
