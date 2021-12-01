@@ -13,7 +13,7 @@ addons:
 install:
 - pip install ansible==2.3.0 molecule-gce apache-libcloud
 - ansible --version
-- printf '[defaults]\nroles_path=../' >ansible.cfg
+# - printf '[defaults]\nroles_path=../' >ansible.cfg
 
 env:
   matrix:
@@ -38,5 +38,5 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_3b9f0b9d36d1_key -iv $encrypted_3b9f0b9d36d1_iv
   -in secrets.tar.enc -out secrets.tar -d
 - tar xvf secrets.tar  
-- mv gcetravis_key /home/travis/.ssh/
-- chmod 0600 /home/travis/.ssh/gcetravis_key
+- mv google_compute_engine /home/travis/.ssh/
+- chmod 0600 /home/travis/.ssh/google_compute_engine
