@@ -23,8 +23,10 @@ env:
 
 
 script:
-- ansible-playbook tests/test.yml -i tests/inventory --syntax-check
-- molecule --debug test
+- molecule create
+- molecule converge
+- molecule verify
+
 after_script:
 - molecule --debug destroy
 
