@@ -26,7 +26,7 @@ env:
 
 
 script:
-- molecule --debug create 
+- molecule create 
 - molecule --debug converge
 - molecule --debug verify
 
@@ -35,8 +35,7 @@ after_script:
 
 
 before_install:
-- openssl aes-256-cbc -K $encrypted_3b9f0b9d36d1_key -iv $encrypted_3b9f0b9d36d1_iv
-  -in secrets.tar.enc -out secrets.tar -d
+- openssl aes-256-cbc -K $encrypted_3b9f0b9d36d1_key -iv $encrypted_3b9f0b9d36d1_iv -in secrets.tar.enc -out secrets.tar -d
 - tar xvf secrets.tar  
 - mv google_compute_engine /home/travis/.ssh/
 - chmod 0600 /home/travis/.ssh/google_compute_engine
