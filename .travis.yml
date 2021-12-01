@@ -16,6 +16,9 @@ install:
 - printf '[defaults]\nroles_path=../' >ansible.cfg
 
 env:
+  matrix:
+  - GCE_CREDENTIALS_FILE="$(pwd)/credentials.json"
+
   global:
   - secure: B8ieVFpN4LXLuG+6Qejfs9X4/pqPMWCXZA6tQ++l8uKEIBDdYfeZL5xg2wjBu99ehftnK0zB+baLWptmiyHY9FJCa5T4phlp/AufEhrJbmGVH2qwR7zsSPPJFJm13MimuUpNaRkYaSpys/6On7YUmeR3F14q/CZ4LhO7uDe3vYVeSSN52mLG1yZO61Clb4arjcDtxRn9FQJ2dVZ9jFnFQAG7OMcGKRj0ZLC+g+4v7LsDuQIHNzAnV7ptXC81f5AZcifhRJvHfggmMPCH/Euw1s04U0g26S3Rk0Xaze7V4Na7HYjD84sHu3N5Eqdq3aP1uOtbE465ZEXU13r9Vp0MwixI/Bw51JjbXNVqsLYJind/1ju3OsSVm47qLBFgbZyiuPYxmh6Cm5vAIOibfhUTp1rRUvhxS8y/ZfFBaLoqCnGgplyx+B6bRvDVq6hU2hfF3i/ZpoARi1o74y35nktEQQdi4gwjrcpeJrQRpR2KJmZwuZ7AyFb99IHiJl05AHcgMTf+gHxWhgUlm/bRtfuUoMNQziVCoVyuuXOrl79MZDGDoOvrDTAt7UJ9A09cG56M0pZUgiExex1jO2PX7m3cW7eaayUdeKDZ38186cKVmLLd885T3IVj/nUJ1S16LEuwn67pcyiCs8Lb+IHsdgVdB7sSc61k8F/a59P23SA8aZA=
   - secure: AMj2hyJIJAxeCOLA6moMefrloDi0iINslXp8lEwbT/WSKl5FNeE999uJoB/pT7EVhcSM01LpTi73stbjd8GWLarTLY+u3wxHCjXj6s65nfmIqrJQ2y+ytR33FKymCCv4NV29vehfDKc0n7HFWeHrWO1K7bGK+C/nZ56eNgX3fpviot+UHZV7zR6UZ5sqopQF/GhRBb7gFR2a1Pv76tcvWvGo4cLhajtv3By+02YQ0OBQvbg4ivnS0Htr7+/d37CSzwJMpKxlkHTXDFHohqERInA1wrprKyBveQA1wfmT4a6x9ZMSThDuWrCchUOiR6w/b1MzWqUEa6VKVwwDTsz4a6E/b37+egEjS2B4XoSELmGzC5uTjVNnaxH01oJ2ZArjuJfOAgBjYw+NPgf0cCqvWAgdlx0gXhAtZRno4PJwsBOUX9DmlWb5zztbOKOrjm/sVfGuVcpbKfo1xLOOIdn1alyXadIGBervYiaWyePHwY+Y2y/FlI6nNAX8KtCbucT6f0K+7vCXugBjSeJ8ErVJcX31dDbTpVl2JFMv6mES8nwGlB/GJaQwXJUNVOnkfrL6J5ekYOTsy9/+R8KTfjvfhNf2m0b0gPyaqGd4pkV7zxM/I2lRJvMLc97Kl93Y4UySTWFKIDZkH9/ZyBlBPFfPjwPWTZv+y3mXb7Rlm57rGLU=
@@ -34,3 +37,6 @@ after_script:
 before_install:
 - openssl aes-256-cbc -K $encrypted_3b9f0b9d36d1_key -iv $encrypted_3b9f0b9d36d1_iv
   -in secrets.tar.enc -out secrets.tar -d
+- tar xvf secrets.tar  
+- mv gcetravis_key /home/travis/.ssh/
+- chmod 0600 /home/travis/.ssh/gcetravis_key
