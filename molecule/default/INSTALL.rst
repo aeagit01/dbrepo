@@ -19,6 +19,4 @@ widely recommended `'--user' flag`_ when invoking ``pip``.
 .. _'--user' flag: https://packaging.python.org/tutorials/installing-packages/#installing-to-the-user-site
 
 .. code-block:: bash
-
-    $ pip install 'molecule_vagrant'
     $ sudo pip install apache-libcloud
