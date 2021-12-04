@@ -14,7 +14,7 @@
     ssh_identity_file: "{{ lookup('env', 'HOME') }}/.ssh/google_compute_engine"
   tasks:
     - name: Create molecule instance(s)
-      gce:
+      google.cloud.gcp_compute_instance:
         instance_names: "{{ item.name }}"
         zone: "{{ item.zone }}"
         machine_type: "{{ item.machine_type }}"
